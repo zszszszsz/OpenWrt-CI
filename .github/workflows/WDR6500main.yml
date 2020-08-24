@@ -93,7 +93,7 @@ jobs:
           cat >> .config <<EOF
           CONFIG_TARGET_ar71xx=y
           CONFIG_TARGET_ar71xx_generic=y
-          CONFIG_TARGET_ar71xx_generic_DEVICE_tl-wdr6500-v2=y 
+          CONFIG_TARGET_ar71xx_generic_DEVICE_tl-wdr6500-v2=y
           EOF
 
           # 固件压缩:
@@ -106,11 +106,6 @@ jobs:
           # CONFIG_EFI_IMAGES=y
           # EOF
 
-          # IPv6支持:
-          cat >> .config <<EOF
-          CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-          CONFIG_PACKAGE_ipv6helper=y
-          EOF
 
           # 多文件系统支持:
           # cat >> .config <<EOF
@@ -148,13 +143,26 @@ jobs:
           # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
           # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
           # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
+          # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
           # CONFIG_PACKAGE_luci-app-ttyd=y
           # CONFIG_PACKAGE_luci-app-v2ray-server=y
           # CONFIG_PACKAGE_luci-app-verysync=y
           # CONFIG_PACKAGE_luci-app-webadmin=y
           # CONFIG_PACKAGE_luci-app-wireguard=y
           # CONFIG_PACKAGE_luci-app-wrtbwmon=y
+            CONFIG_PACKAGE_v2ray=y
+          # CONFIG_PACKAGE_vlmcsd is not set
+          # CONFIG_PACKAGE_vsftpd-alt is not set
+          # CONFIG_PACKAGE_wol is not set
+            CONFIG_TARGET_ROOTFS_TARGZ=y
+            CONFIG_V2RAY_COMPRESS_GOPROXY=y
+            CONFIG_V2RAY_COMPRESS_UPX=y
+            CONFIG_V2RAY_DISABLE_NONE=y
+            CONFIG_V2RAY_EXCLUDE_ASSETS=y
+            CONFIG_V2RAY_EXCLUDE_V2CTL=y
+            CONFIG_V2RAY_JSON_INTERNAL=y
+            CONFIG_PACKAGE_kmod-nf-conntrack-netlink=y
+            CONFIG_PACKAGE_nlbwmon=y
           EOF
 
           # LuCI主题:
